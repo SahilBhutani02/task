@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Answer3</title>
+  </head>
+  <body>
+    <script>
+      let str = [
+        "J",
+        "Z",
+        "D",
+        "Q",
+        "L",
+        "W",
+        "A",
+        "H",
+        "Y",
+        "K",
+        "G",
+        "N",
+        "V",
+        "R",
+        "P",
+        "X",
+        "C",
+        "M",
+        "F",
+        "O",
+        "U",
+        "S",
+        "I",
+        "E",
+        "T",
+        "B",
+      ];
+
+      function sort(str) {
+        let swapped;
+        do {
+          swapped = false;
+          for (let i = 0; i < str.length - 1; i++) {
+            if (str[i] > str[i + 1]) {
+              var tmp = str[i + 1];
+              str[i + 1] = str[i];
+              str[i] = tmp;
+              swapped = true;
+            }
+          }
+        } while (swapped);
+        return str;
+      }
+
+    //   console.log(sort(str));
+    </script>
+  </body>
+</html>

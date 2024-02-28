@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Answer4</title>
+  </head>
+  <body>
+    <script>
+      var api = "https://jsonplaceholder.typicode.com/posts";
+      var arr = [];
+      async function fetchData() {
+        var response = await fetch(api);
+        var data = await response.json();
+        try {
+          if (response.status!==200) {
+            throw new Error("Api not found");
+          } else {
+            for (let i = 0; i < 5; i++) {
+              arr.push(data[i].title);
+            }
+            return arr;
+          }
+        } catch (err) {
+          console.log(err.message);
+        }
+      }
+    //   console.log(fetchData());
+    </script>
+  </body>
+</html>
